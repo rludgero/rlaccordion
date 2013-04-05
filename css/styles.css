@@ -1,0 +1,318 @@
+@charset "utf-8";
+
+@import url('reset.css'); /* don´t use this on production */
+@import url('fonts.css'); /* don´t use this on production */
+
+
+html {
+  overflow-y: scroll;
+}  /* avoid jumping in firefox when displaying the scroll */
+
+body {
+	background-image: url(../img/bg.png);
+	font-size: 62.5%; /* 1em = 10px */
+}
+
+h1 {
+	font-size: 2.2em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.8em;
+}
+
+h4 {
+	font-size: 1.6em;
+}
+
+::-moz-selection {
+	background: #00607F;
+	color: #fff;
+}
+
+::selection {
+	background: #00607F;
+	color: #fff;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+p {
+	color: #fff;
+	font-size: 1.4em;
+	line-height: 1.4em;
+	margin-bottom: 10px;
+	text-shadow: 1px 2px 3px #000;
+}
+
+input,
+textarea,
+textarea:focus,
+a:focus, a:active {
+	border: none;
+	outline: none;
+}
+
+#wrapper {
+  margin: 0 auto;
+  position: relative;
+  max-width: 640px;
+}
+
+/* Header
+__________________________________________ */
+
+header {
+  float: left;
+  margin: 0 auto;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.logo {
+	float: left;
+	max-width: 100%;
+	width: 100%;
+}
+
+.logo a {
+	color: #242628;
+  display: block;
+  float: left;
+  font-family: 'ChunkFiveRegular',Arial,sans-serif;
+  font-size: 3.7em;
+  line-height: 2em;
+  text-decoration: none;
+  text-transform: capitalize;
+	text-shadow: 1px 1px #555;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	text-align: center;
+	max-width: 100%;
+	width: 100%;
+}
+
+.logo a:hover {
+	color: #333433;
+  text-shadow: 1px 1px #666;
+}
+
+.follow {
+  float: left;
+  margin: 0 0 4%;
+  width: 100%;
+}
+
+.btn {
+  background-color: #007197;
+  background-image: -moz-linear-gradient( center bottom, rgb(0,93,124) 0%, rgb(0,136,181) 100%);
+  background-image: -o-linear-gradient( center bottom, rgb(0,93,124) 0%, rgb(0,136,181) 100%);
+  background-image: -webkit-linear-gradient( left bottom, left top, color-stop(0,rgb(0,93,124)), color-stop(1, rgb(0,136,181)));
+  background-image: -ms-linear-gradient(top, rgb(0,93,124) 0%,rgb(0,136,181) 100%);
+  background-image: linear-gradient(top, rgb(0,93,124) 0%,rgb(0,136,181) 100%);
+  border: 1px solid #1D4253;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+  color: #FFFFFF;
+  display: block;
+  font-size: 1.2em;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #004e68;
+}
+
+.btn:hover {
+	background-color: #0081ab;
+	background-image: -moz-linear-gradient( center bottom, rgb(0,116,154) 0%, rgb(0,165,198) 100%);
+	background-image: -o-linear-gradient( center bottom, rgb(0,116,154) 0%, rgb(0,165,198) 100%);
+	background-image: -webkit-linear-gradient(left bottom, left top, color-stop(0, rgb(0,116,154)), color-stop(1, rgb(0,165,198)));
+  background-image: -ms-linear-gradient(top, rgb(0,116,154) 0%,rgb(0,165,198) 100%);
+  background-image: linear-gradient(top, rgb(0,116,154) 0%,rgb(0,165,198) 100%);
+	transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+}
+
+.btn:active {
+	background-color: #006486;
+	background-image: -moz-linear-gradient( center bottom, rgb(0,133,166) 0%, rgb(0,83,122) 100%);
+	background-image: -o-linear-gradient( center bottom, rgb(0,133,166) 0%, rgb(0,83,122) 100%);
+	background-image: -webkit-linear-gradient(left bottom, left top, color-stop(0, rgb(0,133,166)), color-stop(1, rgb(0,83,122)));
+  background-image: -ms-linear-gradient(top, rgb(0,133,166) 0%,rgb(0,83,122) 100%);
+  background-image: linear-gradient(top, rgb(0,133,166) 0%,rgb(0,83,122) 100%);
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+
+.btn span {
+	border-radius: 5px;
+	border-top: 1px solid #00B8D3;
+	display: block;
+	font-weight: bold;
+	padding: 2% 0;
+}
+
+.btn span:active {
+	border-top-color: transparent;
+}
+
+
+/* Main
+__________________________________________ */
+
+.main-wrapper {
+  float: left;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main-wrapper h2 {
+	color: #242628;
+  display: block;
+  font-family: 'ChunkFiveRegular',Arial,sans-serif;
+	font-weight: bold;
+  line-height: 2em;
+  margin: 0 0 3%;
+  text-decoration: none;
+  text-transform: capitalize;
+	text-shadow: 1px 1px #555;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	text-align: center;
+	max-width: 100%;
+	width: 100%;
+}
+
+.accordion-container {
+	margin: 0 auto 100px;
+}
+
+.accordion-container h3 {
+  background-color: #007197;
+  background-image: -moz-linear-gradient( center bottom, rgb(0,93,124) 0%, rgb(0,136,181) 100%);
+  background-image: -o-linear-gradient( center bottom, rgb(0,93,124) 0%, rgb(0,136,181) 100%);
+  background-image: -webkit-linear-gradient( left bottom, left top, color-stop(0,rgb(0,93,124)), color-stop(1, rgb(0,136,181)));
+  background-image: -ms-linear-gradient(top, rgb(0,93,124) 0%,rgb(0,136,181) 100%);
+  background-image: linear-gradient(top, rgb(0,93,124) 0%,rgb(0,136,181) 100%);
+  border: 1px solid #1D4253;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+  color: #fff;
+  margin: 0 auto;
+  text-decoration: none;
+	text-shadow: 1px 1px 0 #004E68;
+}
+
+.accordion-container h3 span {
+  border-radius: 5px;
+	border-top: 1px solid #00B8D3;
+	display: block;
+	font-size: 1em;
+	padding: 3%;
+}
+
+.accordion-container h3 a {
+	float: right;
+	cursor: pointer;
+}
+
+.accordion-container .minusTwo,
+.accordion-container .minus {
+	display: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+
+/* use this if you want starter accordion showing a first element of accordion */
+
+/*#first div:first-child h3 .plus {
+	display: none;
+}
+
+#first div:first-child h3 .minus {
+	display: block;
+}
+
+#first div:first-child .info {
+	display: block;
+}*/
+
+
+#second li:first-child h3 .plusTwo {
+	display: none;
+}
+
+#second li:first-child h3 .minusTwo {
+	display: block;
+}
+
+#second li:first-child .info {
+	display: block;
+}
+
+.info {
+	display: none;
+	margin: 0 auto;
+	padding: 2% 5%;
+}
+
+.info h4 {
+	font-weight: bold;
+	text-shadow: 1px 1px #555;
+}
+
+.info .btn {
+	margin: 10px 0;
+}
+
+/* Footer
+__________________________________________ */
+
+footer {
+  float: left;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.copy p {
+	float: right;
+	font-size: 1.2em;
+	opacity: 0.3;
+	transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+}
+
+.copy p:hover {
+	opacity: 0.9;
+}
+
+/* IE7
+__________________________________________ */
+
+/* position of minus and plus sign in IE7 */
+
+/* if your html structure is based in HTML5, consider use a SHIV*/
+
+.ie7 h3 span a {
+	position: absolute;
+	right: 10px;
+}
