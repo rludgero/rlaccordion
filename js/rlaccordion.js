@@ -1,85 +1,125 @@
 /*
-*
 * Author: Rodrigo Ludgero http://rodrigoludgero.com/
+*
+* Twitter: @rodrigoludgero
 *
 * Description: A jQuery accordion plugin
 *
 * License: MIT licensed
 *
 * Project: jQuery rlAccordion Plugin https://github.com/Rodrigo-Ludgero
-*
 */
 
 (function( $ ) {
 
-$.fn.rlAccordion = function(method, options) {
+	$.fn.rlAccordion = function(method, options) {
+		var settings = $.extend({
+			rlAccordion: "rlAccordion", 		// add class in the same level of a parent statement for avoid styles conflict
+			signTag: "<span></span>", 			// html tag parent signs
+			titles: "h3",			 							// html tag parent of minus and plus, this may replaced also for a class
+			titlesChild: "span",						// html child titles and parent signs
+			container: "div",								// html tag adjacent sibling of titles
+			childNum: 0,										// number of the children start open
+			classOpen: "opened",						// add class to the titles option adjacent sibling
+			open: "&#x2b;",  								// unicode plus sign
+			close: "&#x2212;",							// unicode minus sign
+			rlOpen: "rl-open", 							// class for a plus sign
+			rlClose: "rl-close" 						// class for a minus sign
+		}, options);
 
-  var $this = $(this);
+		var $element = $(this).children(settings.titles); 		// limit the scope
+		var $symbols = $(settings.signTag); 									// create a html tag
+		var $signOpen = $symbols.html(settings.open); 				// insert a unicode open sign into the parent
+		var $signClose = $symbols.html(settings.close); 			// insert a unicode close sign into the parent
+		var $insertElement = $symbols.appendTo($element); 		// insert symbols signs into titles settings
 
-  var settings = $.extend({
+		// add class in the same level of a parent statement for avoid styles conflict
+		$element.parent().addClass(settings.rlAccordion);
 
-     minus: ".minus", // minus sign class
-      plus: ".plus", // plus sign class
-    titles: "h3", // html tag parent for minus and plus, this may replaced also for a class
-     infos: ".info" // titles sibling container
+		// parse code to assign the corresponding unicode and class
+		if ( $element.next().hasClass(settings.classOpen) ) {
+			$element.children().html(settings.close).addClass(settings.rlClose);
+		}
+		else {
+			$element.children().html(settings.open).addClass(settings.rlOpen);
+		}
 
-  }, options);
+		var methods = {
+			init : function() { // defaults settings
+				return this.each(function() {
 
-  var fxs = {
+					$(this).find(settings.container).eq(settings.childNum).addClass(settings.classOpen).slideDown()
+								 .prev().children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose); // assign the children start open
 
-    init : function() { // defaults settings
-      return this.each(function() {
+					$element.on('click', function() {
+						$(this).parent().find(settings.container).removeClass(settings.classOpen).slideUp();
+						$(this).parent().find(settings.titles).children().html(settings.open);
+						$(this).next().addClass(settings.classOpen).slideDown();
 
-        $(settings.minus).click(function(e) {
-          e.preventDefault(); // prevent the browser jump to the link anchor
-            $this.find(settings.infos).slideUp(); // close all titles sibling
-            $(settings.minus).hide(); // hidden all minus signs
-            $(settings.plus).show(); // show plus signs
-        });
+						if ( $(this).children().hasClass(settings.rlClose) ) {
+								 $(this).next().stop();
+						}
 
-        $(settings.plus).click(function(e) {
-          e.preventDefault(); // prevent the browser jump to the link anchor
-            $this.find(settings.infos).slideUp(); // close all titles sibling
-            $(settings.minus).hide(); // hidden all minus signs
-            $(settings.plus).show(); // show all plus signs
-            $(this).parents(settings.titles).next().slideDown(); // show parent parent sibling "great uncle"
-            $(this).siblings().show(); // show sibling minus sign
-            $(this).hide(); // hidden plus sign
-        });
+						if ( $(this).next().hasClass(settings.classOpen) ) {
+								 $(this).parent().find(settings.titlesChild).removeClass(settings.rlClose).addClass(settings.rlOpen);
+								 $(this).children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose);
+						}
+						else {
+							$(this).children().html(settings.open).removeClass(settings.rlClose).addClass(settings.rlOpen);
+						}
+					});
+				});
+			},
 
-      });
-    },
+			single : function() {
+				return this.each(function() {
 
-    single : function() {
-      return this.each(function() {
+					$(this).find(settings.container).eq(settings.childNum).addClass(settings.classOpen).slideDown()
+								 .prev().children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose); // assign the children start open
 
-        $(settings.minus).click(function(e) {
-          e.preventDefault(); // prevent the browser jump to the link anchor
-            $(this).parents(settings.titles).next().slideToggle(); // show parent parent sibling "great uncle"
-            $(this).hide(); // hidden minus signs
-            $(this).siblings().show(); // show sibling plus signs
-        });
+					$element.on('click', function() {
+						$(this).next().slideToggle().toggleClass(settings.classOpen);
+						if ($(this).next().hasClass(settings.classOpen)) {
+								$(this).children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose);
+						}
+						else {
+							$(this).children().html(settings.open).removeClass(settings.rlClose).addClass(settings.rlOpen);
+						}
+					});
+				});
+			},
 
-        $(settings.plus).click(function(e) {
-          e.preventDefault(); // prevent the browser jump to the link anchor
-            $(this).parents(settings.titles).next().slideToggle(); // show parent parent sibling "great uncle"
-            $(this).siblings().show(); // show sibling minus sign
-            $(this).hide(); // hidden plus sign
-        });
+			mix : function() {
+				return this.each(function() {
 
-      });
-    }
-  };
+					$(this).find(settings.container).eq(settings.childNum).addClass(settings.classOpen).slideDown()
+								 .prev().children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose); // assign the children start open
 
-  // Method calling logic
-  if ( fxs[method] ) {
-    return fxs[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-  } else if ( typeof method === 'object' || ! method ) {
-    return fxs.init.apply( this, arguments );
-  } else {
-    $.error( 'Method ' +  method + ' does not exist on jQuery.rlAccordion ' );
-  }
+					$element.on('click', function() {
+						if ( $(this).next().hasClass(settings.classOpen) ) {
+								 $(this).parent().find(settings.container).removeClass(settings.classOpen).slideUp();
+								 $(this).parent().find(settings.titles).children().html(settings.open).removeClass(settings.rlClose).addClass(settings.rlOpen);
+								 $(this).children().html(settings.open);
+						}
+						else {
+							$(this).parent().find(settings.container).removeClass(settings.classOpen).slideUp();
+							$(this).next().addClass(settings.classOpen).slideDown();
+							$(this).parent().find(settings.titles).children().html(settings.open).removeClass(settings.rlClose).addClass(settings.rlOpen);
+							$(this).children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose);
+						}
+					});
+				});
+			}
+		};
 
-};
+		// Method calling logic
+		if ( methods[method] ) {
+			return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+		} else if ( typeof method === 'object' || ! method ) {
+			return methods.init.apply( this, arguments );
+		} else {
+			$.error( 'Method ' +  method + ' does not exist on jQuery.rlAccordion ' );
+		}
+	};
 
 })( jQuery );

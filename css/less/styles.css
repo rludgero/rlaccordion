@@ -556,6 +556,9 @@ __________________________________________ */
   display: none;
   padding: 2% 5%;
 }
+.rlAccordion > h3 + div.opened {
+  display: block;
+}
 /* Footer
 __________________________________________ */
 footer {
