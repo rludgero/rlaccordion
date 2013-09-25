@@ -48,12 +48,12 @@
 			init : function() { // defaults settings
 				return this.each(function() {
 
-					$(this).find(settings.container).eq(settings.childNum).addClass(settings.classOpen).slideDown()
+					$(this).children(settings.container).eq(settings.childNum).addClass(settings.classOpen).slideDown()
 								 .prev().children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose); // assign the children start open
 
 					$element.on('click', function() {
-						$(this).parent().find(settings.container).removeClass(settings.classOpen).slideUp();
-						$(this).parent().find(settings.titles).children().html(settings.open);
+						$(this).parent().children(settings.container).removeClass(settings.classOpen).slideUp();
+						$(this).parent().children(settings.titles).children().html(settings.open);
 						$(this).next().addClass(settings.classOpen).slideDown();
 
 						if ( $(this).children().hasClass(settings.rlClose) ) {
@@ -61,7 +61,7 @@
 						}
 
 						if ( $(this).next().hasClass(settings.classOpen) ) {
-								 $(this).parent().find(settings.titlesChild).removeClass(settings.rlClose).addClass(settings.rlOpen);
+								 $(this).parent().find(settings.titles).children().removeClass(settings.rlClose).addClass(settings.rlOpen);
 								 $(this).children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose);
 						}
 						else {
@@ -74,7 +74,7 @@
 			single : function() {
 				return this.each(function() {
 
-					$(this).find(settings.container).eq(settings.childNum).addClass(settings.classOpen).slideDown()
+					$(this).children(settings.container).eq(settings.childNum).addClass(settings.classOpen).slideDown()
 								 .prev().children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose); // assign the children start open
 
 					$element.on('click', function() {
@@ -92,19 +92,19 @@
 			mix : function() {
 				return this.each(function() {
 
-					$(this).find(settings.container).eq(settings.childNum).addClass(settings.classOpen).slideDown()
+					$(this).children(settings.container).eq(settings.childNum).addClass(settings.classOpen).slideDown()
 								 .prev().children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose); // assign the children start open
 
 					$element.on('click', function() {
 						if ( $(this).next().hasClass(settings.classOpen) ) {
-								 $(this).parent().find(settings.container).removeClass(settings.classOpen).slideUp();
-								 $(this).parent().find(settings.titles).children().html(settings.open).removeClass(settings.rlClose).addClass(settings.rlOpen);
+								 $(this).parent().children(settings.container).removeClass(settings.classOpen).slideUp();
+								 $(this).parent().children(settings.titles).children().html(settings.open).removeClass(settings.rlClose).addClass(settings.rlOpen);
 								 $(this).children().html(settings.open);
 						}
 						else {
-							$(this).parent().find(settings.container).removeClass(settings.classOpen).slideUp();
+							$(this).parent().children(settings.container).removeClass(settings.classOpen).slideUp();
 							$(this).next().addClass(settings.classOpen).slideDown();
-							$(this).parent().find(settings.titles).children().html(settings.open).removeClass(settings.rlClose).addClass(settings.rlOpen);
+							$(this).parent().children(settings.titles).children().html(settings.open).removeClass(settings.rlClose).addClass(settings.rlOpen);
 							$(this).children().html(settings.close).removeClass(settings.rlOpen).addClass(settings.rlClose);
 						}
 					});
