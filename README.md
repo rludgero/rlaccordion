@@ -1,106 +1,123 @@
 RLAccordion
-=========
+===========
 
 A jQuery accordion plugin responsive, flexible & adaptative with signs unicode characters.
 
-<h2>About</h2>
-<p>A jQuery accordion plugin responsive, flexible & adaptative with signs unicode characters, tested even IE7.</p>
-<p>You can use @font-face for assign the unicode too, like Font Awesome and others, or with content: "" pseudo elements css, or sprites using classes</p>
-<p>you can modify the structure, classes and unicodes using the options</p>
 
-<h2>Usage</h2>
+## About
 
-<h3>HTML</h3>
+A jQuery accordion plugin responsive, flexible & adaptative with signs unicode characters, tested even IE7.
 
-      <div id="first">
-        <h3>Accordion One</h3>
-        <div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto illo velit temporibus aliquam eius dolorem dolor laudantium quidem porro obcaecati nesciunt ducimus doloribus molestiae ad praesentium reiciendis enim eligendi fugit!</p>
+You can use @font-face for assign the unicode too, like Font Awesome and others, or with content: "" pseudo elements css, or sprites using classes.
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quis delectus ducimus quibusdam ex totam natus sint nemo nam possimus explicabo labore architecto magnam accusantium veritatis tenetur repudiandae ab laboriosam?</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis molestiae molestias atque asperiores illum nisi saepe placeat deleniti commodi dolore cupiditate quas. Ipsum odio quibusdam nemo est ducimus ea nesciunt?</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eligendi ex aperiam facilis alias! Quaerat asperiores quia molestias laboriosam commodi aspernatur dolorum nostrum impedit perspiciatis cupiditate quas distinctio earum dignissimos.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi laboriosam voluptates eum vero iste enim quas a nulla consequuntur quasi. Dolorum minima corporis molestias blanditiis ducimus obcaecati necessitatibus excepturi magnam?</p>
-        </div>
-
-        <h3>Accordion Two</h3>
-        <div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto illo velit temporibus aliquam eius dolorem dolor laudantium quidem porro obcaecati nesciunt ducimus doloribus molestiae ad praesentium reiciendis enim eligendi fugit!</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quis delectus ducimus quibusdam ex totam natus sint nemo nam possimus explicabo labore architecto magnam accusantium veritatis tenetur repudiandae ab laboriosam?</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis molestiae molestias atque asperiores illum nisi saepe placeat deleniti commodi dolore cupiditate quas. Ipsum odio quibusdam nemo est ducimus ea nesciunt?</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eligendi ex aperiam facilis alias! Quaerat asperiores quia molestias laboriosam commodi aspernatur dolorum nostrum impedit perspiciatis cupiditate quas distinctio earum dignissimos.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi laboriosam voluptates eum vero iste enim quas a nulla consequuntur quasi. Dolorum minima corporis molestias blanditiis ducimus obcaecati necessitatibus excepturi magnam?</p>
-        </div>
-
-      </div><!-- end of first -->
-
-<h3>JS</h3>
+You can modify the structure, classes and unicodes using the options.
 
 
-<p>How to implement:</p>
+## Usage
 
-    <script>
+### HTML
 
-      $(function() {
+```
+<div id="first">
+
+    <h3>Accordion One</h3>
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto illo velit temporibus aliquam eius dolorem dolor laudantium quidem porro obcaecati nesciunt ducimus doloribus molestiae ad praesentium reiciendis enim eligendi fugit!</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quis delectus ducimus quibusdam ex totam natus sint nemo nam possimus explicabo labore architecto magnam accusantium veritatis tenetur repudiandae ab laboriosam?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis molestiae molestias atque asperiores illum nisi saepe placeat deleniti commodi dolore cupiditate quas. Ipsum odio quibusdam nemo est ducimus ea nesciunt?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eligendi ex aperiam facilis alias! Quaerat asperiores quia molestias laboriosam commodi aspernatur dolorum nostrum impedit perspiciatis cupiditate quas distinctio earum dignissimos.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi laboriosam voluptates eum vero iste enim quas a nulla consequuntur quasi. Dolorum minima corporis molestias blanditiis ducimus obcaecati necessitatibus excepturi magnam?</p>
+    </div>
+
+    <h3>Accordion Two</h3>
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto illo velit temporibus aliquam eius dolorem dolor laudantium quidem porro obcaecati nesciunt ducimus doloribus molestiae ad praesentium reiciendis enim eligendi fugit!</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quis delectus ducimus quibusdam ex totam natus sint nemo nam possimus explicabo labore architecto magnam accusantium veritatis tenetur repudiandae ab laboriosam?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis molestiae molestias atque asperiores illum nisi saepe placeat deleniti commodi dolore cupiditate quas. Ipsum odio quibusdam nemo est ducimus ea nesciunt?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eligendi ex aperiam facilis alias! Quaerat asperiores quia molestias laboriosam commodi aspernatur dolorum nostrum impedit perspiciatis cupiditate quas distinctio earum dignissimos.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi laboriosam voluptates eum vero iste enim quas a nulla consequuntur quasi. Dolorum minima corporis molestias blanditiis ducimus obcaecati necessitatibus excepturi magnam?</p>
+    </div>
+
+</div><!-- end of first -->
+
+```
+
+### JS
+
+#### How to implement:
+
+```
+<script>
+
+    $(function() {
 
         jQuery("#first").rlAccordion();
 
         // or with options
-          jQuery("#second").rlAccordion('single',{
+        jQuery("#second").rlAccordion('single',{
 
-              rlAccordion: "rlAccordion",     // add class in the same level of a parent statement for avoid styles conflict
-              signTag: "<span></span>",       // html tag parent signs
-              titles: "h3",                   // html tag parent of minus and plus, this may replaced also for a class
-              titlesChild: "span",            // html child titles and parent signs
-              container: "div",               // html tag adjacent sibling of titles
-              childNum: 0,                    // number of the children start open
-              classOpen: "opened",            // add class to the titles option adjacent sibling
-              open: "&#x2b;",                 // unicode plus sign
-              close: "&#x2212;",              // unicode minus sign
-              rlOpen: "rl-open",              // class for a plus sign
-              rlClose: "rl-close"             // class for a minus sign
+            rlAccordion: 'rlAccordion', // add class in the same level of a parent statement for avoid styles conflict
+            signTag: '<span></span>',   // html tag parent signs
+            titles: 'h3',               // html tag parent of minus and plus, this may replaced also for a class
+            titlesChild: 'span',        // html child titles and parent signs
+            container: 'div',           // html tag adjacent sibling of titles
+            childNumOptions: true,      // Active childNum option
+            childNum: 0,                // number of the children start open
+            classOpen: 'opened',        // add class to the titles option adjacent sibling
+            open: '&#x2b;',             // unicode plus sign
+            close: '&#x2212;',          // unicode minus sign
+            rlOpen: 'rl-open',          // class for a plus sign
+            rlClose: 'rl-close'         // class for a minus sign
 
-          });
+        });
 
-          jQuery("#thirth").rlAccordion('mix',{
+        jQuery("#thirth").rlAccordion('mix',{
 
-              rlAccordion: "rlAccordion",     // add class in the same level of a parent statement for avoid styles conflict
-              signTag: "<span></span>",       // html tag parent signs
-              titles: "h3",                   // html tag parent of minus and plus, this may replaced also for a class
-              titlesChild: "span",            // html child titles and parent signs
-              container: "div",               // html tag adjacent sibling of titles
-              childNum: 0,                    // number of the children start open
-              classOpen: "opened",            // add class to the titles option adjacent sibling
-              open: "&#x2b;",                 // unicode plus sign
-              close: "&#x2212;",              // unicode minus sign
-              rlOpen: "rl-open",              // class for a plus sign
-              rlClose: "rl-close"             // class for a minus sign
+            rlAccordion: 'rlAccordion', // add class in the same level of a parent statement for avoid styles conflict
+            signTag: '<span></span>',   // html tag parent signs
+            titles: 'h3',               // html tag parent of minus and plus, this may replaced also for a class
+            titlesChild: 'span',        // html child titles and parent signs
+            container: 'div',           // html tag adjacent sibling of titles
+            childNumOptions: true,      // Active childNum option
+            childNum: 0,                // number of the children start open
+            classOpen: 'opened',        // add class to the titles option adjacent sibling
+            open: '&#x2b;',             // unicode plus sign
+            close: '&#x2212;',          // unicode minus sign
+            rlOpen: 'rl-open',          // class for a plus sign
+            rlClose: 'rl-close'         // class for a minus sign
+        });
 
-          });
+    });
 
-      });
+</script>
 
-    </script>
+// All options are variables that can be adapted to your code.
 
-    // All options are variables that can be adapted to your code.
+```
 
-<h2>Demo:</h2>
+## jQuery plugin page
 
-<p>http://rodrigoludgero.com/rlaccordion/rlaccordion.html</p>
+https://plugins.jquery.com/rlAccordion/
 
 
-<h2>License</h2>
-<p>Copyright (c) 2013 Rodrigo Ludgero Licensed under the MIT license</p>
+## Demo:
 
-<pre>
-<code>
+http://rodrigoludgero.com/rlaccordion/rlaccordion.html
+
+
+## License
+
+```
+
+Copyright (c) 2013 Rodrigo Ludgero Licensed under the MIT license
 
 The MIT License
 
@@ -124,5 +141,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-</code>
-</pre>
+```

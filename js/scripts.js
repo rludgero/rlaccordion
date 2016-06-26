@@ -1,13 +1,13 @@
 $(function() {
 
-	$("#first").rlAccordion();
+    $("#first").rlAccordion();
 
-	$("#second").rlAccordion('single', {
-		childNum: 1
-	});
+    $("#second").rlAccordion('single', {
+        childNumOptions: false
+    });
 
-	$("#thirth").rlAccordion('mix', {
-		childNum: 2
-	});
+    $("#thirth").rlAccordion('mix', {
+        childNum: 4
+    });
 
 });
