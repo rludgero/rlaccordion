@@ -110,7 +110,7 @@ https://plugins.jquery.com/rlAccordion/
 
 ## Demo:
 
-http://rodrigoludgero.com/rlaccordion/rlaccordion.html
+rlaccordion.html
 
 
 ## License
